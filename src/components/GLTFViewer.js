@@ -36,7 +36,7 @@ const GLTFViewer = () => {
       scene.add(directionalLight);
 
       // Load the GLTF model
-      console.log('${process.env.PUBLIC_URL}');
+      console.log(${process.env.PUBLIC_URL});
       const loader = new GLTFLoader();
       loader.load('${process.env.PUBLIC_URL}/Assets/space4/scene.gltf', (gltf) => {
         model = gltf.scene;

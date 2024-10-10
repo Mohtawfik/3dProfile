@@ -8,7 +8,7 @@
         { name: "React", color: "text-white" },
         { name: "JavaScript", color: "text-white" },
       ],
-      image: `${process.env.PUBLIC_URL}/imageTrimmer.png',
+      image: `${process.env.PUBLIC_URL}/imageTrimmer.png`,
       hosted_link: "https://mohtawfik.github.io/Image-Size-Reducer/",
     },
     {

@@ -1,0 +1,35 @@
+/* src/components/MainPage.css */
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Make sure it takes the full viewport height */
+    position: relative;
+}
+
+.gltf-container {
+    position: relative;
+    height: 80vh; /* Adjust the height of the GLTF viewer */
+    width: 100%;
+}
+
+/* Custom styles for the about section */
+.about-section {
+    background-color: #2e2e2e; /* Different background color */
+    padding: 50px 20px;
+}
+
+/* Adjust Header and Footer to stay within the view but not overlap */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 100;
+}

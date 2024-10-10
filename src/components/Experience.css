@@ -1,0 +1,87 @@
+/* Overall Section Styling */
+.experience-section {
+    padding: 50px 50px;
+    padding-bottom: 70px;
+    /* background-color: #f5f5f5; */
+    font-family: 'Roboto', serif;
+    font-weight: 400;
+    letter-spacing: 2px;
+  }
+  
+  /* Heading Styling */
+  .experience-heading {
+    margin-bottom: 50px;
+    text-align: center;
+    font-size: 75px;
+    font-weight: 200;
+    font-family: 'Roboto', serif;
+    letter-spacing: 5px;
+  }
+  
+  /* Flex Container for the Columns */
+  .experience-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto; /* Center the content */
+    gap: 20px; /* Add spacing between columns */
+  }
+  
+  /* Left Column */
+  .left-column {
+    flex: 1; /* Set size ratio for left column */
+    text-align: left;
+    border-right: 1px solid black;
+    padding-right: 15px;
+  }
+  
+  .stat-item {
+    margin-bottom: 30px;
+    display: flex; /* Make it a flex container */
+    justify-content: space-between; /* Distribute space evenly */
+    align-items: center; /* Vertically align items */
+  }
+  
+  .stat-number {
+    font-size: 3.5rem;
+    font-weight: bold;
+    font-family: 'Roboto', serif;
+    color: #333;
+    flex-shrink: 0; /* Prevent the number from shrinking */
+  }
+  
+  .stat-label {
+    font-size: 1.2rem; /* Increase font size for better alignment */
+    color: #706a6a;
+    text-align: center;
+    font-weight: 400;
+    white-space: nowrap; /* Prevent text wrapping */
+  }
+  
+  /* Right Column */
+  .right-column {
+    flex: 1; /* Set size ratio for right column */
+    text-align: left;
+  }
+  
+  .role-company {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .role-title {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 15px;
+  }
+  
+  .role-description {
+    font-size: 1.8rem;
+    color: #706a6a;
+    line-height: 1.6;
+    font-weight: 400;
+    letter-spacing: 2px;
+  }
+  

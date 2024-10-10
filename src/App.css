@@ -1,38 +1,101 @@
-.App {
-  text-align: center;
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Serif 4', serif;
+  /* background-color: #004245; */
+  background-color: #000d16;
+  /* background-color: #000d16;  */
+  height: 100%;
+  width: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+spline-viewer {
+  position: fixed; /* or absolute */
+  top: 0;
+  left: 0;
+  width: 100vw; /* Full width */
+  height: 100vh; /* Full height */
+  z-index: 999; /* Higher than other components */
+  pointer-events: none; /* Prevent interactions with the Spline viewer if you want to click through */
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: column; /* Stack elements vertically */
+  min-height: 100vh; /* Full viewport height */
+  overflow: hidden;
 }
 
-.App-link {
-  color: #61dafb;
+/* Header styling */
+.header {
+  flex: 0 1 auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Header adjustments */
+.header {
+  position: absolute;
+  top: 20px;
+  left: 20px;
 }
+
+.header h1 {
+  font-size: 65px;
+  font-weight: bold;
+}
+
+/* GLTFViewer should take up a portion of the screen */
+.gltf-viewer-container {
+  flex: 1 1 auto; /* Let GLTFViewer grow */
+  height: 80vh; /* Adjust height as needed */
+  width: 100%;
+}
+
+/* About section */
+.about-container {
+  width: 100%;
+  flex: 0 1 auto; /* Let About take up content height */
+  background-color: #d8d8d8; /* Dark background */
+  padding-top: 50px;
+  padding-left: 20px;
+  padding-right: 20px;
+
+}
+.experience-container {
+  width: 100%;
+  flex: 0 1 auto; /* Let About take up content height */
+  background-color: #d8d8d8; /* Dark background */
+
+
+}
+
+.project-container {
+  width: 100%;
+  flex: 0 1 auto; /* Let About take up content height */
+  background-color: #000d16;
+
+  /* padding: 50px 20px; */
+}
+
+.contact-container {
+  width: 100%;
+  flex: 0 1 auto; /* Let About take up content height */
+  background-color: #000d16;
+  font-family: 'Poppins', sans-serif;
+
+  /* padding: 50px 20px; */
+}
+
+.footer-container {
+  width: 100%;
+  flex: 0 1 auto; /* Let About take up content height */
+  /* background-color: #d8d8d8; */
+  background-color: #000d16;
+
+  /* padding: 50px 20px; */
+}
+
+/* Footer remains at the bottom */
+.footer {
+  flex: 0 1 auto;
+}
+
+

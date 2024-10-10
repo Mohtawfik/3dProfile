@@ -1,0 +1,29 @@
+/* src/components/Footer.css */
+
+.footer {
+    position: absolute;
+    bottom: 62px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-right: 10px;
+    border-right: 2px solid #b8d3e6;
+    color: #625f5f; /* Make sure the text is visible */
+  }
+  
+  .footer a {
+    /* color: #cbcbcb; */
+    color: #ffffff; /* Make sure the text is visible */
+    font-size: 18px;
+    font-family: 'Roboto', serif;
+    letter-spacing: 6px;
+    text-decoration: none;
+    margin: 5px 0;
+  }
+  
+  .footer a:hover {
+    text-decoration: underline;
+    color: #f7f3f3; /* Make sure the text is visible */
+  }
+  

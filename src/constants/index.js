@@ -61,7 +61,7 @@ export const publicUrls = {
     linkedin: {
       title: "LinkedIn",
       link: "https://www.linkedin.com/in/mohammed-tawfik-09241712a/",
-      icon: `${process.env.PUBLIC_URL}/linkedin.png`,
+      icon: `${process.env.PUBLIC_URL}/linkedIn.png`,
     },
   },
 };

@@ -56,14 +56,13 @@ export const publicUrls = {
     github: {
       title: "GitHub",
       link: "https://github.com/Mohtawfik/",
-      icon: `${process.env.PUBLIC_URL}/github.png',
+      icon: `${process.env.PUBLIC_URL}/github.png`,
     },
     linkedin: {
       title: "LinkedIn",
       link: "https://www.linkedin.com/in/mohammed-tawfik-09241712a/",
       icon: `${process.env.PUBLIC_URL}/linkedin.png`,
     },
-    // Add more social profiles as needed
   },
 };
 

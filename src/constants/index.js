@@ -33,14 +33,16 @@
       hosted_link: "",
     },
     {
-      name: "Portfolio",
-      description: "A Simple Portfolio about me and my work.",
+      name: "MD-Gen",
+      description: "An AI Powered Question and Answer Generator.",
       tags: [
-        { name: "Node.js", color: "text-white" },
+        { name: "NLP", color: "text-white" },
+        { name: "React.js", color: "text-white" },
+        { name: "Machine Learning", color: "text-white" },
         { name: "MongoDB", color: "text-white" },
       ],
-      image: `${process.env.PUBLIC_URL}/iamTawfy.png`,
-      hosted_link: "https://iamtawfy.netlify.app/",
+      image: `${process.env.PUBLIC_URL}/MD-GEN.png`,
+      hosted_link: "",
     },
     
   ];

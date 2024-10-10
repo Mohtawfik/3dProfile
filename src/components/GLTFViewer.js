@@ -38,7 +38,7 @@ const GLTFViewer = () => {
       // Load the GLTF model
       console.log('${process.env.PUBLIC_URL}');
       const loader = new GLTFLoader();
-      loader.load('/Assets/space4/scene.gltf', (gltf) => {
+      loader.load('${process.env.PUBLIC_URL}/Assets/space4/scene.gltf', (gltf) => {
         model = gltf.scene;
         scene.add(model);
 

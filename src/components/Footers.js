@@ -14,6 +14,7 @@ const Footers = () => {
           <p className="text-[#d7d6dd] tracking-widest font-roboto font-medium text-[15px]">Reach out on</p>
           <a
             target="_blank"
+            rel="noopener noreferrer"
             href="https://www.linkedin.com/in/mohammed-tawfik-09241712a/"
             className="text-[#d7d6dd] font-medium tracking-widest font-roboto hover:underline text-[15px] "
           >
@@ -21,6 +22,7 @@ const Footers = () => {
           </a>
           <a
             target="_blank"
+            rel="noopener noreferrer"
             href="https://github.com/Mohtawfik"
             className="text-[#d7d6dd] font-medium tracking-widest font-roboto hover:underline text-[15px] "
           >
@@ -28,6 +30,7 @@ const Footers = () => {
           </a>
           <a
             target="_blank"
+            rel="noopener noreferrer"
             href="https://leetcode.com/u/iamtawfy/"
             className="text-[#d7d6dd] font-medium tracking-widest font-roboto hover:underline text-[15px] "
           >

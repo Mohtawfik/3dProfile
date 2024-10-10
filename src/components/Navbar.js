@@ -7,7 +7,7 @@ const Navbar = ({ show }) => {
     <div className={`navbar ${show ? 'visible' : ''}`}>
         <div className="navbar-header">
           <a href="">
-            <img src="/logo_white.svg" alt="Logo" className="logo" />
+          <img src={`${process.env.PUBLIC_URL}/logo_white.svg`} alt="Logo" className="logo" />
           </a>
             {/* <h1>Tawfik</h1> */}
         </div>

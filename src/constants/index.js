@@ -8,7 +8,7 @@
         { name: "React", color: "text-white" },
         { name: "JavaScript", color: "text-white" },
       ],
-      image: "/imageTrimmer.png",
+      image: `${process.env.PUBLIC_URL}/imageTrimmer.png',
       hosted_link: "https://mohtawfik.github.io/Image-Size-Reducer/",
     },
     {
@@ -18,7 +18,7 @@
         { name: "Node.js", color: "text-white" },
         { name: "MongoDB", color: "text-white" },
       ],
-      image: "/iamTawfy.png",
+      image: `${process.env.PUBLIC_URL}/iamTawfy.png`,
       hosted_link: "https://iamtawfy.netlify.app/",
     },
 
@@ -29,7 +29,7 @@
         { name: "React", color: "text-white" },
         { name: "JavaScript", color: "text-white" },
       ],
-      image: "/pdfEditor.png",
+      image: `${process.env.PUBLIC_URL}/pdfEditor.png`,
       hosted_link: "",
     },
     {
@@ -39,7 +39,7 @@
         { name: "Node.js", color: "text-white" },
         { name: "MongoDB", color: "text-white" },
       ],
-      image: "/iamTawfy.png",
+      image: `${process.env.PUBLIC_URL}/iamTawfy.png`,
       hosted_link: "https://iamtawfy.netlify.app/",
     },
     
@@ -56,12 +56,12 @@ export const publicUrls = {
     github: {
       title: "GitHub",
       link: "https://github.com/Mohtawfik/",
-      icon: "/github.png",
+      icon: `${process.env.PUBLIC_URL}/github.png',
     },
     linkedin: {
       title: "LinkedIn",
       link: "https://www.linkedin.com/in/mohammed-tawfik-09241712a/",
-      icon: "/linkedin.png",
+      icon: `${process.env.PUBLIC_URL}/linkedin.png`,
     },
     // Add more social profiles as needed
   },

@@ -20,7 +20,6 @@ const App = () => {
     const handleScroll = () => {
       const aboutSection = document.getElementById('about-section');
       const sectionTop = aboutSection.getBoundingClientRect().top;
-      console.log(sectionTop, window.innerHeight);
       if (sectionTop <= window.innerHeight / 8) {
         setShowNavbar(true);
       } else {

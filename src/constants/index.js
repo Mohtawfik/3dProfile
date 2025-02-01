@@ -12,14 +12,15 @@
       hosted_link: "https://mohtawfik.github.io/Image-Size-Reducer/",
     },
     {
-      name: "Portfolio",
-      description: "A Simple Portfolio about me and my work.",
+      name: "Story-Weaver",
+      description: "A Story generating application powered by AI.",
       tags: [
         { name: "Node.js", color: "text-white" },
         { name: "MongoDB", color: "text-white" },
+        { name: "React", color: "text-white" },
       ],
-      image: `${process.env.PUBLIC_URL}/iamTawfy.png`,
-      hosted_link: "https://iamtawfy.netlify.app/",
+      image: `${process.env.PUBLIC_URL}/story-weaver.png`,
+      hosted_link: "https://story-weaver.netlify.app/",
     },
 
     {

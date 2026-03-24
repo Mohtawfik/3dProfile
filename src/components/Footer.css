@@ -1,7 +1,7 @@
 /* src/components/Footer.css */
 
 .footer {
-    position: absolute;
+    position: fixed;
     bottom: 62px;
     right: 20px;
     display: flex;
@@ -9,7 +9,9 @@
     align-items: flex-end;
     padding-right: 10px;
     border-right: 2px solid #b8d3e6;
-    color: #625f5f; /* Make sure the text is visible */
+    color: #625f5f;
+    z-index: 1100;
+    pointer-events: auto;
   }
   
   .footer a {
@@ -21,9 +23,85 @@
     text-decoration: none;
     margin: 5px 0;
   }
+
+  .footer-action-link {
+    background: none;
+    border: 0;
+    padding: 0;
+    margin: 5px 0;
+    color: #ffffff;
+    font-size: 18px;
+    font-family: 'Roboto', serif;
+    letter-spacing: 6px;
+    font-weight: 400;
+    line-height: 1;
+    text-decoration: none;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+  }
   
   .footer a:hover {
     text-decoration: underline;
     color: #f7f3f3; /* Make sure the text is visible */
   }
-  
+
+  .footer--home {
+    flex-shrink: 0;
+    border-right-color: rgba(255, 255, 255, 0.35);
+  }
+
+  .footer--home a {
+    color: rgba(250, 250, 250, 0.92);
+    text-shadow: 0 1px 12px rgba(0, 0, 0, 0.6);
+  }
+
+  .footer--home .footer-action-link {
+    color: rgba(250, 250, 250, 0.92);
+    text-shadow: 0 1px 12px rgba(0, 0, 0, 0.6);
+  }
+
+  .footer--home a:hover {
+    color: #ffffff;
+  }
+
+  .footer--home .footer-action-link:hover {
+    color: #ffffff;
+    text-decoration: underline;
+  }
+
+  .footer-home-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    pointer-events: auto;
+  }
+
+  .footer-socials {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+
+  .footer-social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(250, 250, 250, 0.9);
+    text-shadow: none;
+    cursor: pointer;
+  }
+
+  .footer-social-icon {
+    width: 28px;
+    height: 28px;
+    fill: currentColor;
+    transition: color 0.25s ease;
+  }
+
+  .footer-social-link:hover {
+    color: #ffffff;
+    text-decoration: none;
+  }

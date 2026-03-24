@@ -50,8 +50,14 @@
 
   // src/constants.js
 export const personalInfo = {
-  fullName: "Tawfik",
+  fullName: "Iam Tawfik",
   email: "iamtawfy@gmail.com",
+};
+
+/** Large hero wordmark on the home page (left), similar to a bold two-line poster title */
+export const homeWordmark = {
+  line1: "Iam",
+  line2: "TAWFIK",
 };
 
 export const publicUrls = {

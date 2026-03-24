@@ -20,9 +20,21 @@ spline-viewer {
 }
 .app {
   display: flex;
-  flex-direction: column; /* Stack elements vertically */
-  min-height: 100vh; /* Full viewport height */
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.home-page {
+  min-height: 100vh;
+  height: 100vh;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.inner-page-main {
+  flex: 1 1 auto;
+  padding-top: 72px;
 }
 
 /* Header styling */
@@ -42,11 +54,16 @@ spline-viewer {
   font-weight: bold;
 }
 
-/* GLTFViewer should take up a portion of the screen */
+/* GLTFViewer: full viewport on home */
 .gltf-viewer-container {
-  flex: 1 1 auto; /* Let GLTFViewer grow */
-  height: 80vh; /* Adjust height as needed */
+  flex: 1 1 auto;
   width: 100%;
+}
+
+.home-gltf {
+  flex: 1 1 auto;
+  min-height: 0;
+  height: 100%;
 }
 
 /* About section */

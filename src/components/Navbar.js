@@ -1,39 +1,16 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Navbar.css';
 
-const Navbar = ({ show }) => {
+const Navbar = () => {
   return (
-    
-    <div className={`navbar ${show ? 'visible' : ''}`}>
-        <div className="navbar-header">
-          <a href="">
+    <div className="navbar visible navbar-minimal">
+      <div className="navbar-header">
+        <Link to="/">
           <img src={`${process.env.PUBLIC_URL}/logo_white.svg`} alt="Logo" className="logo" />
-          </a>
-            {/* <h1>Tawfik</h1> */}
-        </div>
-        <nav>
-            <ul className="navbar-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Work</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="https://tawfik-3yoe-resume.tiiny.site" target='blank'>Resume</a></li>
-            </ul>
-        </nav>
+        </Link>
+      </div>
     </div>
-
-    // <header className={`navbar ${show ? 'visible' : ''}`}>
-    //   <nav>
-    //     <div className="navbar-header">
-    //       <a className="navbar-brand" href="#">Tawfik</a>
-    //     </div>
-    //     <ul className="navbar-links">
-    //       <li><a href="#about-section">About</a></li>
-    //       <li><a href="#projects">Projects</a></li>
-    //       <li><a href="#contact">Github</a></li>
-    //       <li><a href="#contact">LeetCode</a></li>
-    //     </ul>
-    //   </nav>
-    // </header>
   );
 };
 

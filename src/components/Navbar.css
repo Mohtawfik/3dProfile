@@ -4,17 +4,20 @@
     position: fixed;
     top: 0;
     width: 100%;
-    /* background-color: #cbbebe;
-    color: black; */
-    background-color: #000d16;
+    background-color: rgba(0, 13, 22, 0.85);
+    backdrop-filter: blur(8px);
     color: #d7d6dd;
     padding-left: 30px;
-    /* padding-right: 4px; */
-    display: none;
-    justify-content: space-between;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
     z-index: 1000;
     border-bottom: 0.5px solid #d7d6dd;
 
+  }
+
+  .navbar-minimal {
+    min-height: 56px;
   }
 
   .logo {
@@ -28,6 +31,7 @@
   .navbar.visible {
     display: flex;
   }
+
   
   .navbar nav {
     padding-right: 20px;

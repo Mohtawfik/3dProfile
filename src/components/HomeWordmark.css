@@ -1,0 +1,64 @@
+/* Futuristic geometric display — Orbitron approximates NIKI-style hero type */
+.home-wordmark {
+  position: relative;
+  flex: 0 1 auto;
+  min-width: 0;
+  max-width: min(58vw, 48rem);
+  pointer-events: none;
+}
+
+.home-wordmark-stack {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: fit-content;
+  max-width: 100%;
+}
+
+.home-wordmark-line {
+  display: block;
+  margin: 0;
+  font-family: "Orbitron", system-ui, sans-serif;
+  font-weight: 800;
+  font-size: clamp(2.25rem, 9.5vw, 7.5rem);
+  line-height: 0.98;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-shadow: 0 2px 28px rgba(0, 0, 0, 0.75), 0 0 1px rgba(0, 0, 0, 0.9);
+}
+
+.home-wordmark-line--primary {
+  color: #eef3f8;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.72), 0 0 1px rgba(0, 0, 0, 0.9);
+}
+
+.home-wordmark-line--secondary {
+  color: transparent;
+  -webkit-text-stroke: 1.6px rgba(221, 230, 240, 0.9);
+  text-stroke: 1.6px rgba(221, 230, 240, 0.9);
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.65);
+}
+
+.home-wordmark-line + .home-wordmark-line {
+  margin-top: 0.02em;
+}
+
+@media (max-width: 900px) {
+  .home-wordmark-line {
+    font-size: clamp(1.85rem, 8vw, 4.5rem);
+    letter-spacing: 0.035em;
+    white-space: normal;
+  }
+
+  .home-wordmark {
+    max-width: min(70vw, 100%);
+  }
+}
+
+@media (max-width: 480px) {
+  .home-wordmark-line {
+    font-size: clamp(1.5rem, 7vw, 2.75rem);
+    letter-spacing: 0.03em;
+  }
+}

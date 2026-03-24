@@ -2,32 +2,39 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { useEffect, useRef } from 'react';
 
-const GLTFViewer = () => {
-  const viewerRef = useRef(null); // Create a ref to attach the Three.js renderer
+const GLTFViewer = ({ onIntroComplete, reduceMotion }) => {
+  const viewerRef = useRef(null);
+  const onIntroCompleteRef = useRef(onIntroComplete);
+
+  useEffect(() => {
+    onIntroCompleteRef.current = onIntroComplete;
+  }, [onIntroComplete]);
 
   useEffect(() => {
     let scene, camera, renderer, model;
     let mouseX = 0, mouseY = 0;
+    let introNotified = false;
+
+    const notifyIntroComplete = () => {
+      if (introNotified) return;
+      introNotified = true;
+      onIntroCompleteRef.current?.();
+    };
 
     // Initialize the scene
     function init() {
-      // Create a new scene
       scene = new THREE.Scene();
 
-      // Setup the camera
       camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    
-      // Setup renderer
+
       renderer = new THREE.WebGLRenderer({ antialias: true });
       renderer.setSize(window.innerWidth, window.innerHeight);
-      renderer.setClearColor(0x000000, 0); // Transparent background
-      
-      // Append the renderer's canvas to the ref container instead of the body
+      renderer.setClearColor(0x000000, 0);
+
       if (viewerRef.current) {
         viewerRef.current.appendChild(renderer.domElement);
       }
 
-      // Add lighting
       const ambientLight = new THREE.AmbientLight(0x404040, 2);
       scene.add(ambientLight);
 
@@ -35,45 +42,50 @@ const GLTFViewer = () => {
       directionalLight.position.set(0, 10, 10);
       scene.add(directionalLight);
 
-      // Load the GLTF model
-      console.log(`${process.env.PUBLIC_URL}`);
       const modelUrl = `${process.env.PUBLIC_URL}/Assets/space4/scene.gltf`;
       const loader = new GLTFLoader();
-      loader.load(modelUrl, (gltf) => {
-        model = gltf.scene;
-        scene.add(model);
+      loader.load(
+        modelUrl,
+        (gltf) => {
+          model = gltf.scene;
+          scene.add(model);
 
-        // Set model properties
-        model.rotation.y = -0.5; // Initial rotation
-        model.position.set(0, 0, 0);
-        model.scale.set(1, 1, 1); // Adjust scale if necessary
-        // Start zoom-in animation
-        zoomInAnimation();
-      }, undefined, (error) => {
-        console.error('Error loading the GLTF model:', error);
-      });
+          model.rotation.y = -0.5;
+          model.position.set(0, 0, 0);
+          model.scale.set(1, 1, 1);
 
-      // Set initial camera position
+          if (reduceMotion) {
+            camera.position.set(0.5, 5, 6);
+            camera.lookAt(0, 0, 0);
+            notifyIntroComplete();
+          } else {
+            zoomInAnimation();
+          }
+        },
+        undefined,
+        () => {
+          console.error('Error loading the GLTF model');
+          notifyIntroComplete();
+        }
+      );
+
       camera.position.set(0.5, 5, 10);
       camera.lookAt(0, 0, 0);
 
-      // Add event listeners for mouse movement
       document.addEventListener('mousemove', onDocumentMouseMove, false);
       window.addEventListener('resize', onWindowResize, false);
 
       animate();
     }
 
-    // Window resize handler
     function onWindowResize() {
       camera.aspect = window.innerWidth / window.innerHeight;
       camera.updateProjectionMatrix();
       renderer.setSize(window.innerWidth, window.innerHeight);
     }
 
-    // Zoom in animation
     function zoomInAnimation() {
-      const zoomDuration = 2000; // Duration in milliseconds
+      const zoomDuration = 2000;
       const zoomStart = camera.position.z;
       const zoomEnd = 6;
 
@@ -86,46 +98,43 @@ const GLTFViewer = () => {
 
         if (progress < 1) {
           requestAnimationFrame(zoomIn);
+        } else {
+          notifyIntroComplete();
         }
       };
 
       zoomIn();
     }
 
-    // Mouse move event handler
     function onDocumentMouseMove(event) {
       mouseX = (event.clientX / window.innerWidth) * 2 - 1;
       mouseY = (event.clientY / window.innerHeight) * 2 - 1;
     }
 
-    // Animation loop
     function animate() {
       requestAnimationFrame(animate);
 
-      // Rotate model based on mouse movement
       if (model) {
-        model.rotation.y = mouseX * 0.5 - 0.5;  // Rotate horizontally
-        model.rotation.x = mouseY * 0.2; // Rotate vertically
+        model.rotation.y = mouseX * 0.5 - 0.5;
+        model.rotation.x = mouseY * 0.2;
       }
 
       renderer.render(scene, camera);
     }
 
-    // Start the scene
     init();
 
-    // Cleanup function when component unmounts
     return () => {
       if (renderer && viewerRef.current) {
-        viewerRef.current.removeChild(renderer.domElement); // Remove renderer from DOM
+        viewerRef.current.removeChild(renderer.domElement);
       }
-      window.removeEventListener('resize', onWindowResize); // Clean up event listeners
-      document.removeEventListener('mousemove', onDocumentMouseMove); // Remove mouse event
+      window.removeEventListener('resize', onWindowResize);
+      document.removeEventListener('mousemove', onDocumentMouseMove);
     };
-  }, []); // Empty dependency array ensures this runs once when the component mounts
+  }, [reduceMotion]);
 
   return (
-    <div ref={viewerRef} style={{ width: '100%', height: '80vh' }}>
+    <div ref={viewerRef} style={{ width: '100%', height: '100%', minHeight: 0 }}>
       {/* The Three.js scene will be rendered inside this div */}
     </div>
   );

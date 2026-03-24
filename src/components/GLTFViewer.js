@@ -14,6 +14,7 @@ const GLTFViewer = ({ onIntroComplete, reduceMotion }) => {
     let scene, camera, renderer, model;
     let mouseX = 0, mouseY = 0;
     let introNotified = false;
+    const mountNode = viewerRef.current;
 
     const notifyIntroComplete = () => {
       if (introNotified) return;
@@ -21,7 +22,6 @@ const GLTFViewer = ({ onIntroComplete, reduceMotion }) => {
       onIntroCompleteRef.current?.();
     };
 
-    // Initialize the scene
     function init() {
       scene = new THREE.Scene();
 
@@ -31,8 +31,8 @@ const GLTFViewer = ({ onIntroComplete, reduceMotion }) => {
       renderer.setSize(window.innerWidth, window.innerHeight);
       renderer.setClearColor(0x000000, 0);
 
-      if (viewerRef.current) {
-        viewerRef.current.appendChild(renderer.domElement);
+      if (mountNode) {
+        mountNode.appendChild(renderer.domElement);
       }
 
       const ambientLight = new THREE.AmbientLight(0x404040, 2);
@@ -125,8 +125,8 @@ const GLTFViewer = ({ onIntroComplete, reduceMotion }) => {
     init();
 
     return () => {
-      if (renderer && viewerRef.current) {
-        viewerRef.current.removeChild(renderer.domElement);
+      if (renderer && mountNode) {
+        mountNode.removeChild(renderer.domElement);
       }
       window.removeEventListener('resize', onWindowResize);
       document.removeEventListener('mousemove', onDocumentMouseMove);
@@ -135,7 +135,6 @@ const GLTFViewer = ({ onIntroComplete, reduceMotion }) => {
 
   return (
     <div ref={viewerRef} style={{ width: '100%', height: '100%', minHeight: 0 }}>
-      {/* The Three.js scene will be rendered inside this div */}
     </div>
   );
 };

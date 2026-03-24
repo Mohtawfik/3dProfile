@@ -1,78 +1,140 @@
-
-  
-  export const projects = [
-    {
-      name: "Image Size Trimmer",
-      description: "A simple Image Size Reducer built on React JS.",
-      tags: [
-        { name: "React", color: "text-white" },
-        { name: "JavaScript", color: "text-white" },
-      ],
-      image: `${process.env.PUBLIC_URL}/imageTrimmer.png`,
-      hosted_link: "https://mohtawfik.github.io/Image-Size-Reducer/",
-    },
+export const projects = [
     {
       name: "Story-Weaver",
-      description: "A Story generating application powered by AI.",
+      description: "An AI storytelling platform with prompt orchestration, context memory, and multi-step generation pipelines.",
       tags: [
         { name: "Node.js", color: "text-white" },
         { name: "MongoDB", color: "text-white" },
         { name: "React", color: "text-white" },
+        { name: "LLM", color: "text-white" },
       ],
-      image: `${process.env.PUBLIC_URL}/story-weaver.png`,
+      image: `${process.env.PUBLIC_URL}/logo.svg`,
       hosted_link: "https://story-weaver.netlify.app/",
-    },
-
-    {
-      name: "PDF Editor",
-      description: "A simple PDF editing website built on React JS.",
-      tags: [
-        { name: "React", color: "text-white" },
-        { name: "JavaScript", color: "text-white" },
-      ],
-      image: `${process.env.PUBLIC_URL}/pdfEditor.png`,
-      hosted_link: "",
     },
     {
       name: "MD-Gen",
-      description: "An AI Powered Question and Answer Generator.",
+      description: "An AI-powered medical Q&A and knowledge extraction workflow with NLP preprocessing and retrieval layers.",
       tags: [
         { name: "NLP", color: "text-white" },
-        { name: "React.js", color: "text-white" },
+        { name: "React", color: "text-white" },
         { name: "Machine Learning", color: "text-white" },
         { name: "MongoDB", color: "text-white" },
+        { name: "Python", color: "text-white" },
       ],
-      image: `${process.env.PUBLIC_URL}/MD-GEN.png`,
+      image: `${process.env.PUBLIC_URL}/logo.svg`,
       hosted_link: "",
     },
-    
+    {
+      name: "Distributed Job Scheduler",
+      description: "A fault-tolerant job scheduler with retry policies, dead-letter queues, and horizontal workers.",
+      tags: [
+        { name: "Go", color: "text-white" },
+        { name: "Redis", color: "text-white" },
+        { name: "Docker", color: "text-white" },
+        { name: "gRPC", color: "text-white" },
+      ],
+      image: `${process.env.PUBLIC_URL}/logo.svg`,
+      hosted_link: "",
+    },
+    {
+      name: "Realtime Collaboration Engine",
+      description: "Operational-transform based editing backend with websocket sync, presence, and conflict resolution.",
+      tags: [
+        { name: "TypeScript", color: "text-white" },
+        { name: "WebSocket", color: "text-white" },
+        { name: "PostgreSQL", color: "text-white" },
+        { name: "CRDT/OT", color: "text-white" },
+      ],
+      image: `${process.env.PUBLIC_URL}/logo.svg`,
+      hosted_link: "",
+    },
+    {
+      name: "MLOps Model Serving Platform",
+      description: "Versioned model deployment system with canary rollout, feature flags, and latency-aware autoscaling.",
+      tags: [
+        { name: "Python", color: "text-white" },
+        { name: "FastAPI", color: "text-white" },
+        { name: "Kubernetes", color: "text-white" },
+        { name: "Prometheus", color: "text-white" },
+      ],
+      image: `${process.env.PUBLIC_URL}/logo.svg`,
+      hosted_link: "",
+    },
+    {
+      name: "Cloud Cost Analyzer",
+      description: "FinOps dashboard that aggregates billing exports and detects cost anomalies with rule-based alerts.",
+      tags: [
+        { name: "AWS", color: "text-white" },
+        { name: "BigQuery", color: "text-white" },
+        { name: "React", color: "text-white" },
+        { name: "ETL", color: "text-white" },
+      ],
+      image: `${process.env.PUBLIC_URL}/logo.svg`,
+      hosted_link: "",
+    },
+    {
+      name: "3D Asset Pipeline Toolkit",
+      description: "CLI + web tooling for validating, compressing, and versioning GLTF assets for realtime rendering.",
+      tags: [
+        { name: "Three.js", color: "text-white" },
+        { name: "Node.js", color: "text-white" },
+        { name: "GLTF", color: "text-white" },
+        { name: "CI/CD", color: "text-white" },
+      ],
+      image: `${process.env.PUBLIC_URL}/logo.svg`,
+      hosted_link: "",
+    },
+    {
+      name: "Event-Driven Notification Service",
+      description: "Template-driven notification microservice handling email, push, and SMS over Kafka topics.",
+      tags: [
+        { name: "Kafka", color: "text-white" },
+        { name: "Node.js", color: "text-white" },
+        { name: "Redis", color: "text-white" },
+        { name: "Microservices", color: "text-white" },
+      ],
+      image: `${process.env.PUBLIC_URL}/logo.svg`,
+      hosted_link: "",
+    },
+    {
+      name: "Security Audit Automation",
+      description: "Static + dependency vulnerability scanning pipeline with policy gates in pull request workflows.",
+      tags: [
+        { name: "SAST", color: "text-white" },
+        { name: "GitHub Actions", color: "text-white" },
+        { name: "OWASP", color: "text-white" },
+        { name: "DevSecOps", color: "text-white" },
+      ],
+      image: `${process.env.PUBLIC_URL}/logo.svg`,
+      hosted_link: "",
+    },
+    {
+      name: "Observability Control Plane",
+      description: "Unified tracing, metrics, and logs explorer with service dependency graphs and SLO monitoring.",
+      tags: [
+        { name: "OpenTelemetry", color: "text-white" },
+        { name: "Grafana", color: "text-white" },
+        { name: "Tempo", color: "text-white" },
+        { name: "SRE", color: "text-white" },
+      ],
+      image: `${process.env.PUBLIC_URL}/logo.svg`,
+      hosted_link: "",
+    },
+    {
+      name: "API Gateway with Policy Engine",
+      description: "High-performance API gateway with JWT auth, quota enforcement, and declarative access policies.",
+      tags: [
+        { name: "Go", color: "text-white" },
+        { name: "OPA", color: "text-white" },
+        { name: "JWT", color: "text-white" },
+        { name: "Rate Limiting", color: "text-white" },
+      ],
+      image: `${process.env.PUBLIC_URL}/logo.svg`,
+      hosted_link: "",
+    },
   ];
 
-  // src/constants.js
-export const personalInfo = {
-  fullName: "Iam Tawfik",
-  email: "iamtawfy@gmail.com",
-};
-
-/** Large hero wordmark on the home page (left), similar to a bold two-line poster title */
 export const homeWordmark = {
   line1: "Iam",
   line2: "TAWFIK",
 };
-
-export const publicUrls = {
-  socialProfiles: {
-    github: {
-      title: "GitHub",
-      link: "https://github.com/Mohtawfik/",
-      icon: `${process.env.PUBLIC_URL}/github.png`,
-    },
-    linkedin: {
-      title: "LinkedIn",
-      link: "https://www.linkedin.com/in/mohammed-tawfik-09241712a/",
-      icon: `${process.env.PUBLIC_URL}/linkedIn.png`,
-    },
-  },
-};
-
-  

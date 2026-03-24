@@ -175,6 +175,426 @@
   color: #d0e1f5;
 }
 
+.experience-sheet-content {
+  max-height: min(78vh, 760px);
+  overflow-y: auto;
+}
+
+.experience-sheet-layout {
+  display: block;
+}
+
+.experience-sheet-copy {
+  order: initial;
+}
+
+.experience-mosaic {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin: 0.25rem 0 1.15rem;
+}
+
+.experience-tile {
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.035);
+  border-radius: 10px;
+  padding: 0.78rem 0.84rem;
+  min-height: 124px;
+}
+
+.experience-tile--small {
+  grid-column: span 3;
+}
+
+.experience-tile--accent {
+  grid-column: span 3;
+  background: linear-gradient(180deg, rgba(213, 162, 54, 0.92) 0%, rgba(195, 145, 40, 0.9) 100%);
+  border-color: rgba(246, 214, 146, 0.7);
+}
+
+.experience-tile--hero {
+  grid-column: span 4;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
+  min-height: 154px;
+}
+
+.experience-tile--stack {
+  grid-column: span 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.experience-tile-label {
+  margin: 0;
+  color: rgba(248, 241, 236, 0.95);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.experience-tile--accent .experience-tile-label,
+.experience-tile--accent .experience-tile-value,
+.experience-tile--accent .experience-tile-meta {
+  color: #22190a;
+}
+
+.experience-tile-meta {
+  margin: 0.16rem 0 0.72rem;
+  color: rgba(232, 222, 215, 0.56);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.66rem;
+  line-height: 1.35;
+}
+
+.experience-tile-value {
+  margin: 0;
+  color: #f8f3ef;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.experience-company-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.95rem;
+}
+
+.experience-company-row {
+  display: grid;
+  grid-template-columns: minmax(120px, 155px) minmax(0, 1fr);
+  gap: 0.95rem;
+  align-items: start;
+}
+
+.experience-company-period {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.46rem;
+  padding-top: 0.3rem;
+  color: rgba(232, 222, 215, 0.72);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.86rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+.experience-company-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: rgba(240, 227, 218, 0.8);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.2);
+}
+
+.experience-company-main .about-sheet-text {
+  margin-top: 0.1rem;
+}
+
+.experience-company-title {
+  margin: 0 0 0.34rem;
+  color: #d0e1f5;
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(1.7rem, 3.2vw, 2.5rem);
+  font-weight: 100;
+  font-style: italic;
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+}
+
+.experience-company-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.5rem 0 0.05rem;
+}
+
+.experience-company-tag {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  padding: 0.24rem 0.62rem;
+  color: rgba(244, 240, 238, 0.9);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  line-height: 1.2;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.projects-sheet {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  min-height: min(72vh, 720px);
+  max-height: min(92vh, 980px);
+  z-index: 1310;
+  background: linear-gradient(180deg, rgba(44, 35, 43, 0.95) 0%, rgba(37, 31, 41, 0.97) 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 22px 22px 0 0;
+  box-shadow: 0 -24px 64px rgba(0, 0, 0, 0.46);
+  display: flex;
+  flex-direction: column;
+  color: #f4f0ee;
+}
+
+.projects-sheet-handle {
+  width: 64px;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.38);
+  margin: 0.95rem auto 0.2rem;
+}
+
+.projects-sheet-content {
+  width: min(1120px, calc(100vw - 200px));
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  flex: 1 1 auto;
+  position: relative;
+}
+
+.projects-sheet-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.65rem 0.35rem 0.75rem;
+}
+
+.projects-sheet-title {
+  margin: 0;
+  color: #f8f3ef;
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(1.9rem, 4vw, 2.8rem);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: capitalize;
+}
+
+.projects-sheet-close {
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(252, 247, 244, 0.92);
+  border-radius: 999px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.4rem;
+  line-height: 1;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+}
+
+.projects-sheet-close:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.projects-sheet-nav {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(252, 247, 244, 0.92);
+  border-radius: 999px;
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
+  line-height: 1;
+  cursor: pointer;
+  position: absolute;
+  top: 52%;
+  transform: translateY(-50%);
+  z-index: 3;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
+}
+
+.projects-sheet-nav:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.projects-sheet-nav--left {
+  left: -18px;
+}
+
+.projects-sheet-nav--right {
+  right: -18px;
+}
+
+.projects-sheet-list {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 1rem 0.35rem 1.3rem;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 1rem;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+}
+
+.projects-sheet-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.72rem;
+  min-width: min(620px, 86vw);
+  max-width: min(680px, 88vw);
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  overflow: visible;
+  cursor: default;
+  text-align: left;
+  padding: 0.95rem 0.92rem 1rem;
+  transition: transform 0.24s ease, border-color 0.24s ease, background 0.24s ease;
+  scroll-snap-align: start;
+}
+
+.projects-sheet-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.projects-sheet-card-body {
+  padding: 0;
+}
+
+.projects-mosaic {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  gap: 0.62rem;
+  margin-top: 0.5rem;
+}
+
+.projects-tile {
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+  padding: 0.62rem 0.66rem;
+}
+
+.projects-tile--hero {
+  grid-column: 1 / -1;
+  background: linear-gradient(180deg, rgba(228, 200, 168, 0.13) 0%, rgba(228, 200, 168, 0.05) 100%);
+  border-color: rgba(228, 200, 168, 0.28);
+}
+
+.projects-tile--impact {
+  grid-column: span 4;
+  background: linear-gradient(180deg, rgba(92, 126, 170, 0.17) 0%, rgba(92, 126, 170, 0.06) 100%);
+  border-color: rgba(144, 175, 214, 0.28);
+}
+
+.projects-tile--focus {
+  grid-column: span 4;
+  background: linear-gradient(180deg, rgba(136, 111, 160, 0.17) 0%, rgba(136, 111, 160, 0.06) 100%);
+  border-color: rgba(177, 154, 199, 0.28);
+}
+
+.projects-tile--architecture {
+  grid-column: span 4;
+  background: linear-gradient(180deg, rgba(102, 140, 124, 0.16) 0%, rgba(102, 140, 124, 0.06) 100%);
+  border-color: rgba(146, 186, 170, 0.27);
+}
+
+.projects-tile--tags {
+  grid-column: span 4;
+  background: linear-gradient(180deg, rgba(185, 132, 84, 0.16) 0%, rgba(185, 132, 84, 0.06) 100%);
+  border-color: rgba(216, 170, 128, 0.28);
+}
+
+.projects-tile--links {
+  grid-column: 1 / -1;
+  background: linear-gradient(180deg, rgba(166, 127, 95, 0.18) 0%, rgba(166, 127, 95, 0.07) 100%);
+  border-color: rgba(228, 200, 168, 0.32);
+}
+
+.projects-tile-kicker {
+  margin: 0 0 0.25rem;
+  color: rgba(242, 231, 224, 0.62);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.64rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.projects-tile-copy {
+  margin: 0;
+  color: rgba(245, 236, 230, 0.9);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.projects-tile-link {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  padding: 0.22rem 0.64rem;
+  color: #d0e1f5;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.03em;
+}
+
+.projects-tile-link:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.projects-tile--links .projects-tile-link {
+  align-self: flex-start;
+}
+
+.projects-sheet-card-title {
+  margin: 0;
+  color: #e4c8a8;
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(1.7rem, 3.2vw, 2.5rem);
+  font-weight: 100;
+  font-style: italic;
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+}
+
+.projects-sheet-card-text {
+  margin: 0;
+  color: rgba(245, 236, 230, 0.9);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  max-width: 100%;
+}
+
+.projects-sheet-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.42rem;
+  margin: 0;
+}
+
+.projects-sheet-tag {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  padding: 0.14rem 0.46rem;
+  color: rgba(238, 231, 225, 0.9);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.03em;
+}
 
 @media (max-width: 640px) {
   .home-bottom-bar-row {
@@ -208,5 +628,73 @@
   .about-sheet-photo-frame,
   .about-sheet-photo {
     min-height: 180px;
+  }
+
+  .experience-mosaic {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.7rem;
+  }
+
+  .experience-tile--small,
+  .experience-tile--accent,
+  .experience-tile--hero,
+  .experience-tile--stack {
+    grid-column: span 1;
+  }
+
+  .experience-tile-value {
+    font-size: 1.4rem;
+  }
+
+  .experience-company-row {
+    grid-template-columns: 1fr;
+    gap: 0.34rem;
+  }
+
+  .experience-company-period {
+    padding-top: 0;
+    font-size: 0.8rem;
+  }
+
+  .projects-sheet {
+    min-height: 78vh;
+    max-height: 94vh;
+    border-radius: 18px 18px 0 0;
+  }
+
+  .projects-sheet-content {
+    width: 94vw;
+  }
+
+  .projects-sheet-nav {
+    width: 34px;
+    height: 34px;
+    top: 54%;
+  }
+
+  .projects-sheet-nav--left {
+    left: -8px;
+  }
+
+  .projects-sheet-nav--right {
+    right: -8px;
+  }
+
+  .projects-sheet-card {
+    min-width: 86vw;
+    max-width: 86vw;
+  }
+
+  .projects-mosaic {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .projects-tile--hero,
+  .projects-tile--impact,
+  .projects-tile--focus,
+  .projects-tile--architecture,
+  .projects-tile--tags,
+  .projects-tile--links {
+    grid-column: span 1;
   }
 }
